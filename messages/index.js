@@ -168,14 +168,14 @@ intents.matches('Hello', [
           if (res.body.documents[0].score > 0.6) {
             session.send('Good');
           } else { // If there's a negative sentiment
-            session.send(`I'm detecting a negative sentiment, maybe a funny movie can cheer you up?`);
+            session.send(`Not feeling well? Maybe a funny movie can cheer you up?`);
 
             session.dialogData.genre = genres.comedy.id;
             getMovie(session);
           }
         }
 
-        session.send('I know about movies, so ask me for recommendations if you want');
+        session.send('I know about movies, so ask me for recommendations.');
       });
   },
 ])
@@ -243,7 +243,7 @@ intents.matches('Hello', [
 // askName dialog
 bot.dialog('/askName', [
   session =>
-    builder.Prompts.text(session, `Hi! I'm MovieBot. What's your name?`),
+    builder.Prompts.text(session, `Hi! I'm Minty the MovieBot. What's your name?`),
   (session, results) => {
     // Store the user's name on the userData session attribute
     session.userData.name = results.response;
@@ -255,7 +255,7 @@ bot.dialog('/askName', [
 bot.dialog('/yearPrompt', [
   session =>
     builder.Prompts.text(session,
-      `Enter a release year (in the format yyyy) if you want to specify one or just respond with something like 'no' otherwise`),
+      `Enter a release year (in the format yyyy) or just respond with something like 'no'`),
   (session, results) => {
     // there's a match for something that seems like a year?
     const matched = results.response.match(/\d{4}/g);
