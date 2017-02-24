@@ -142,7 +142,7 @@ intents.matches('Hello', [
     }
   },
   session =>
-    builder.Prompts.text(session, `Hi ${session.userData.name}. How are you?`),
+    builder.Prompts.text(session, `Meow ${session.userData.name}. How are you?`),
   (session, results) => {
     // Call the Text Analytics API
     request
@@ -243,7 +243,7 @@ intents.matches('Hello', [
 // askName dialog
 bot.dialog('/askName', [
   session =>
-    builder.Prompts.text(session, `Hi! I'm Minty the MovieBot. What's your name?`),
+    builder.Prompts.text(session, `Hi! I'm Minty the MovieBot. What's your name? Meow`),
   (session, results) => {
     // Store the user's name on the userData session attribute
     session.userData.name = results.response;
@@ -255,7 +255,7 @@ bot.dialog('/askName', [
 bot.dialog('/yearPrompt', [
   session =>
     builder.Prompts.text(session,
-      `Enter a release year (in the format yyyy) or just respond with something like 'no'`),
+      `Do you wanted to specific a year for the movie?`),
   (session, results) => {
     // there's a match for something that seems like a year?
     const matched = results.response.match(/\d{4}/g);
