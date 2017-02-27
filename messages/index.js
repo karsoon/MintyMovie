@@ -69,10 +69,10 @@ const genres = {
   romance: {
     id: 10749,
   },
-  science fiction:{
+  sciencefiction:{
     id:878,
   },
-  tv movie:{
+  tvmovie:{
     id:10770,
   },
   thriller:{
