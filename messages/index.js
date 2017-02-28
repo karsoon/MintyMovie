@@ -168,11 +168,12 @@ intents.matches('Hello', [
       session.beginDialog('/askName');
     } else {
       // Execute the next function
+      // TODO: put in travia info start with did you know
       next();
     }
   },
   session =>
-    builder.Prompts.text(session, `Meow ${session.userData.name}. How are you?`),
+    builder.Prompts.text(session, `Meow ${session.userData.name}. We have the full oscar winning list here, http://oscar.go.com/winnersHow . How are you doing today? `),
   (session, results) => {
     // Call the Text Analytics API
     request
