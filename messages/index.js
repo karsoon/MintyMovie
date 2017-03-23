@@ -173,7 +173,7 @@ intents.matches('Hello', [
     }
   },
   session =>
-    builder.Prompts.text(session, `Meow ${session.userData.name}. We have the full oscar winning list here, http://oscar.go.com/winnersHow . How are you doing today? `),
+    builder.Prompts.text(session, `Meow ${session.userData.name}. We have the full oscar winning list here, http://oscar.go.com/winnersHow. How are you doing today? `),
   (session, results) => {
     // Call the Text Analytics API
     request
